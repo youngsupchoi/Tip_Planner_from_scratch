@@ -1,0 +1,28 @@
+[tool.poetry]
+# 프로젝트 정보 설정
+name = "trip-planner-yt"  # 프로젝트 이름
+version = "0.1.0"  # 프로젝트 버전
+description = "Simple AI trip planner"  # 프로젝트 설명
+authors = ["Joao Moura", "Brandon Hancock"]  # 프로젝트 저자
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"  # Python 버전 요구 사항
+crewai = "0.1.24"  # CrewAI 라이브러리 버전 (자연어 처리)
+unstructured = "==0.10.25"  # Unstructured 라이브러리 버전 (비정형 데이터 처리)
+pyowm = "3.3.0"  # PyOWM 라이브러리 버전 (날씨 정보 처리)
+python-dotenv = "1.0.0"  # python-dotenv 라이브러리 버전 (환경 변수 관리)
+langchain-openai = "^0.0.5"  # Langchain-OpenAI 라이브러리 버전
+
+[tool.pyright]
+# Pyright 설정
+useLibraryCodeForTypes = true  # 타입 정보를 라이브러리 코드에서 가져올지 여부
+exclude = [".cache"]  # 분석에서 제외할 디렉토리
+
+[tool.ruff]
+# Ruff 설정
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']  # 선택한 경고 유형
+ignore = ['W291', 'W292', 'W293']  # 무시할 경고 유형
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]  # 필요한 빌드 시스템
+build-backend = "poetry.core.masonry.api"  # 빌드 백엔드
